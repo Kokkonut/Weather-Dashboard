@@ -14,5 +14,19 @@ header {
     background-color: steelblue;
     color: white;
     padding: 3px;
+}
 
+.carousel-item {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(214, 214, 214);
+}
+
+.dest-btn {
+    margin: 3px;
+}
+
+#last-city {
+    display: flex;
+    flex-direction: column;
 }
