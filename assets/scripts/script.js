@@ -58,14 +58,6 @@ function Geolocation(geoData) {
 
 let displayWeather = (myData) => {
     console.log(myData);
-    console.log(cityCurrent);
-    console.log('current temp: ', myData.current.temp);
-    console.log("current wind: ", myData.current.wind_speed);
-    console.log('current UV: ', myData.current.uvi);
-    console.log("current humidity:", myData.current.humidity);
-    // console.log("humidity:", myData.list[0].main.humidity);
-    // console.log("wind:", myData.list[0].wind.speed);
-
     //current location and date.
     let currentTime = moment().format("MMM Do YY");
     let dateTime = cityCurrent + ' ' + currentTime
@@ -81,18 +73,22 @@ let displayWeather = (myData) => {
 
 
     //5 day
-    // document.querySelector('.cur-weather' + i + ' .city span').innerText = myData.list[i].dt_txt;
-    // //document.querySelector('#weather' + i + ' .city span').innerText = myData.city.name;
-    // document.querySelector('.cur-weather' + i + ' .temp span').innerText = myData.list[i].main.temp.toFixed(1);
-    // document.querySelector('.cur-weather' + i + ' .description span').innerText = myData.list[i].weather[0].description;
-    // document.querySelector('.cur-weather' + i + ' .humidity span').innerText = myData.list[i].main.humidity;
-    // document.querySelector('#weather' + i + ' .wind span').innerText = myData.list[i].wind.speed;
+    for (i = 0; i < 5; i++) {
+        let day = moment().add(i + 1 , 'days').format('dddd Do MMM');
+        document.querySelector('#weather' + i + ' .date span').innerText = day;
+        document.querySelector('#weather' + i + ' .temp span').innerText = myData.daily[i].temp.day;
+        document.querySelector('#weather' + i + ' .humidity span').innerText = myData.daily[i].humidity;
+        document.querySelector('#weather' + i + ' .wind span').innerText = myData.daily[i].wind_speed;
+    }
+
+
+
 }
 
 let fetchData = () => {
     console.log(lat);
     console.log(lon);
-    let fetchURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    let fetchURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
     fetch(fetchURL)
         .then((response) => response.json())
         .then((data) => displayWeather(data))
