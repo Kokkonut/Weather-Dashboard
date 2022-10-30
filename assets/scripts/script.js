@@ -73,6 +73,12 @@ let displayWeather = (myData) => {
     locationCreateEl.innerHTML = dateTime;
     curWeatherEl.appendChild(locationCreateEl);
 
+    //current weather
+    document.querySelector('#cur-weather' + ' .temp-cur span').innerText = myData.current.temp;
+    document.querySelector('#cur-weather' + ' .humidity-cur span').innerText = myData.current.humidity;
+    document.querySelector('#cur-weather' + ' .wind-cur span').innerText = myData.current.wind_speed;
+    document.querySelector('#cur-weather' + ' .uv-cur span').innerText = myData.current.uvi;
+
 
     //5 day
     // document.querySelector('.cur-weather' + i + ' .city span').innerText = myData.list[i].dt_txt;

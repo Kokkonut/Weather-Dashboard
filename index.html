@@ -8,83 +8,83 @@
     <title>Weather Dash</title>
     <link rel="stylesheet" href="./assets/styles/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
     <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 
 <body>
 
+
     <header>
-        <h3>Weather Dashboard</h3>
+        <h3>Weather DashBoard</h3>
     </header>
 
-    <div class="container-fluid">
-
-        <div class="row">
-            <!-- left side/top -->
-            <div class="col s12 m3">
-                <div class='search'>
-                    <h5>Search for a City:</h2>
-                    <form id="search-form">
-                        <input type="text" placeholder="Search...." id="search-bar">
-                        <button type="button" id="search-btn">Search</button>
-                    </form>
-                </div>
-                <div id='last-city'>
-                    <!-- buttons appended here -->
+    <!-- MAIN WRAPPER -->
+    <div class='row'>
+        <!-- left -->
+        <div class="col s12 m4">
+            <div class="input-group mb-3">
+                <form  id="search-form">
+                    <input type="text" placeholder="Search for location" id="search-bar">
+                    <button class="btn waves-effect waves-light" type="submit" id="search-btn">Search</button>
+                </form>
+            </div>
+            <div id="last-city"></div> 
+        </div>
+        <!-- right -->
+        <div class="col">
+            <!-- top -->
+            <div class="row">
+                <div class="cur-weather"></div>
+                <div id="cur-weather">
+                    <!-- <h4 class="city-cur"><span></span></h4> -->
+                    <h4 class="temp-cur"><span></span>&#8451</h4>
+                    <!-- <div class="description-cur"><span></span></div> -->
+                    <div class="humidity-cur">humidity: <span></span>%</div>
+                    <div class="wind-cur">wind speed: <span></span>km/h</div>
+                    <div class="uv-cur">UV Index: <span></span></div>
                 </div>
             </div>
-
-            <!-- right side -->
-            <div class="col">
-                <!-- top -->
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col cur-weather">
-                            <!-- Location and date appended here -->
-                        </div>
-                    </div>
-                    <!-- bottom -->
-                    <div class="row carousel">
-
-                        <div id="weather0" class="col carousel-item">
-                            <h4 class="city"><span></span></h4>
-                            <h4 class="temp"><span></span>&#8451</h4>
-                            <div class="description"><span></span></div>
-                            <div class="humidity">humidity: <span></span>%</div>
-                            <div class="wind">wind speed: <span></span>km/h</div>
-                        </div>
-                        <div id="weather8" class="col carousel-item">
-                            <h4 class="city"><span></span></h4>
-                            <h4 class="temp"><span></span>&#8451</h4>
-                            <div class="description"><span></span></div>
-                            <div class="humidity">humidity: <span></span>%</div>
-                            <div class="wind">wind speed: <span></span>km/h</div>
-                        </div>
-                        <div id="weather16" class="col carousel-item">
-                            <h4 class="city"><span></span></h4>
-                            <h4 class="temp"><span></span>&#8451</h4>
-                            <div class="description"><span></span></div>
-                            <div class="humidity">humidity: <span></span>%</div>
-                            <div class="wind">wind speed: <span></span>km/h</div>
-                        </div>
-                        <div id="weather24" class="col carousel-item">
-                            <h4 class="city"><span></span></h4>
-                            <h4 class="temp"><span></span>&#8451</h4>
-                            <div class="description"><span></span></div>
-                            <div class="humidity">humidity: <span></span>%</div>
-                            <div class="wind">wind speed: <span></span>km/h</div>
-                        </div>
-                        <div id="weather32" class="col carousel-item">
-                            <h4 class="city"><span></span></h4>
-                            <h4 class="temp"><span></span>&#8451</h4>
-                            <div class="description"><span></span></div>
-                            <div class="humidity">humidity: <span></span>%</div>
-                            <div class="wind">wind speed: <span></span>km/h</div>
-                        </div>
-
-
-                    </div>
+            <!-- bottom -->
+            <div class="row">
+                <!-- D1 -->
+                <div class="col" id="weather0">
+                    <h4 class="city"><span></span></h4>
+                    <h4 class="temp"><span></span>&#8451</h4>
+                    <div class="description"><span></span></div>
+                    <div class="humidity">humidity: <span></span>%</div>
+                    <div class="wind">wind speed: <span></span>km/h</div>
+                </div>
+                <!-- d2 -->
+                <div class="col" id="weather8">
+                    <h4 class="city"><span></span></h4>
+                    <h4 class="temp"><span></span>&#8451</h4>
+                    <div class="description"><span></span></div>
+                    <div class="humidity">humidity: <span></span>%</div>
+                    <div class="wind">wind speed: <span></span>km/h</div>
+                </div>
+                <!-- d3 -->
+                <div class="col" id="weather16">
+                    <h4 class="city"><span></span></h4>
+                    <h4 class="temp"><span></span>&#8451</h4>
+                    <div class="description"><span></span></div>
+                    <div class="humidity">humidity: <span></span>%</div>
+                    <div class="wind">wind speed: <span></span>km/h</div>
+                </div>
+                <!-- d4 -->
+                <div class="col" id="weather24">
+                    <h4 class="city"><span></span></h4>
+                    <h4 class="temp"><span></span>&#8451</h4>
+                    <div class="description"><span></span></div>
+                    <div class="humidity">humidity: <span></span>%</div>
+                    <div class="wind">wind speed: <span></span>km/h</div>
+                </div>
+                <!-- d4 -->
+                <div class="col" id="weather32">
+                    <h4 class="city"><span></span></h4>
+                    <h4 class="temp"><span></span>&#8451</h4>
+                    <div class="description"><span></span></div>
+                    <div class="humidity">humidity: <span></span>%</div>
+                    <div class="wind">wind speed: <span></span>km/h</div>
                 </div>
             </div>
         </div>
@@ -95,16 +95,13 @@
 
 
 
-
-
-
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="./assets/scripts/script.js"></script>
 </body>
 
 </html>
+
